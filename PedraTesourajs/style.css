@@ -19,7 +19,7 @@ body {
 }
 
 .container {
-  max-width: 700px;
+  max-width: 900px;
   margin: 50px auto;
   background: #fff;
   padding: 20px;
@@ -65,4 +65,13 @@ form button:hover {
 .bad{
     background: #c51616;
     padding: 10px 20px;
+}
+.colorWhite{
+  color: white;
+  font-family: 'Open sans', sans-serif;
+  max-width: 700px;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 9px;
+  background-color: gray;
 }
