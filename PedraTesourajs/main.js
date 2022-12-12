@@ -45,15 +45,21 @@ form.addEventListener('submit', function(e){
         ganhou = ganhou + 1;
     }
     if(escolha <= 3 && escolha > 0){
-    const msg = `Você escolheu: ${escolhaFormatada} O bot escolheu: ${botFormatado}. Resultado: ${result}`;
+    const msg = `Você escolheu: ${escolhaFormatada}. O bot escolheu: ${botFormatado}. Resultado: ${result}`;
     const conta = `Ganhou: ${ganhou} vez(es); Perdeu: ${perdeu} vez(es); Empatou: ${empate} vez(es)`;
 
     setResultado(msg, true);
     setContagem(conta);
     }
     else{
-        const msg = `${escolhai} é invalido!!`;
-        setResultado(msg, false)
+        if (escolhai == ""){
+            const msg = `'0' é invalido!!`;
+            setResultado(msg, false);
+        }
+        else{
+            const msg = `'${escolhai}' é invalido!!`;
+            setResultado(msg, false);
+        }
     }
 });
 
