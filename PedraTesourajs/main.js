@@ -5,12 +5,35 @@ var empate = 0;
 form.addEventListener('submit', function(e){
     e.preventDefault();
     const inputEscolha = e.target.querySelector('#escolha');
-
     const bot = Math.floor(Math.random() * 3 + 1);
-
     const escolha = Number(inputEscolha.value);
-
     const result = getResultado(escolha, bot);
+
+    var escolhaFormatada;
+    var botFormatado;
+
+    if(escolha == 1){
+        escolhaFormatada = 'Pedra';
+    }
+    if(escolha == 2){
+        escolhaFormatada = 'Papel';
+    }
+    if(escolha == 3){
+        escolhaFormatada = 'Tesoura'
+    }
+
+
+    if(bot == 1){
+        botFormatado = 'Pedra';
+    }
+    if(bot == 2){
+        botFormatado = 'Papel';
+    }
+    if(bot == 3){
+        botFormatado = 'Tesoura'
+    }
+
+
     if (result == 'Empate'){
         empate = empate + 1;
     }
@@ -21,9 +44,11 @@ form.addEventListener('submit', function(e){
         ganhou = ganhou + 1;
     }
     if(escolha <= 3 && escolha > 0){
-    const msg = `Você escolheu: ${escolha} O bot escolheu: ${bot}. Resultado: ${result} <p>Você ganhou: ${ganhou};   Perdeu: ${perdeu};   Empatou: ${empate}</p>`;
+    const msg = `Você escolheu: ${escolhaFormatada} O bot escolheu: ${botFormatado}. Resultado: ${result}`;
+    const conta = `Ganhou: ${ganhou} vez(es); Perdeu: ${perdeu} vez(es); Empatou: ${empate} vez(es)`;
 
     setResultado(msg, true);
+    setContagem(conta);
     }
     else{
         const msg = `O número ${escolha} é invalido!!`;
@@ -81,4 +106,14 @@ function setResultado(msg, isValid){
 
     p.innerHTML = msg;
     resultado.appendChild(p);
+}
+
+function setContagem(msg){
+    const contagem = document.querySelector("#contagem");
+    contagem.innerHTML = '';
+
+    const p = criaP();
+
+    p.innerHTML = msg;
+    contagem.appendChild(p);
 }
