@@ -7,6 +7,7 @@ form.addEventListener('submit', function(e){
     const inputEscolha = e.target.querySelector('#escolha');
     const bot = Math.floor(Math.random() * 3 + 1);
     const escolha = Number(inputEscolha.value);
+    const escolhai = inputEscolha.value;
     const result = getResultado(escolha, bot);
 
     var escolhaFormatada;
@@ -51,7 +52,7 @@ form.addEventListener('submit', function(e){
     setContagem(conta);
     }
     else{
-        const msg = `O número ${escolha} é invalido!!`;
+        const msg = `${escolhai} é invalido!!`;
         setResultado(msg, false)
     }
 });
