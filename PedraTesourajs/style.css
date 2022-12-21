@@ -26,9 +26,9 @@ body {
   border-radius: 9px;
 }
 
-form input, form label, form button {
-  display: block;
-  width: 100%;
+form input, form label, button {
+
+  width: 32.80%;
   margin-bottom: 9px;
 }
 
@@ -42,7 +42,7 @@ form input:focus {
   outline: 2px solid var(--primary-color);
 }
 
-form button {
+ button {
   border: none;
   background: var(--primary-color);
   color: #fff;
@@ -51,9 +51,10 @@ form button {
   height: 40px;
   cursor: pointer;
   margin-top: 25px;
+  border-radius: 9px;
 }
 
-form button:hover {
+ button:hover {
   background: var(--primary-color-darker);
 }
 
@@ -74,4 +75,9 @@ form button:hover {
   padding: 20px;
   border-radius: 9px;
   background-color: gray;
+}
+
+footer img{
+    width: 32%;
+    height: 250px;
 }
