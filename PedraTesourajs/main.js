@@ -1,8 +1,12 @@
-const form = document.querySelector("#formulario");
+//const form = document.querySelector("#formulario");
+const btPedra = document.querySelector('#pedra');
+const btPapel = document.querySelector('#papel');
+const btTesoura = document.querySelector('#tesoura');
 var ganhou = 0;
 var perdeu = 0;
 var empate = 0;
-form.addEventListener('submit', function(e){
+var escolha;
+/*form.addEventListener('submit', function(e){
     e.preventDefault();
     const inputEscolha = e.target.querySelector('#escolha');
     const bot = Math.floor(Math.random() * 3 + 1);
@@ -61,7 +65,180 @@ form.addEventListener('submit', function(e){
             setResultado(msg, false);
         }
     }
+});*/
+
+btPedra.addEventListener('click', function(e){
+    escolha = 1;
+    const bot = Math.floor(Math.random() * 3 + 1);
+    var escolhaFormatada;
+    var botFormatado;
+    const result = getResultado(escolha, bot);
+
+    if(escolha == 1){
+        escolhaFormatada = 'Pedra';
+    }
+    if(escolha == 2){
+        escolhaFormatada = 'Papel';
+    }
+    if(escolha == 3){
+        escolhaFormatada = 'Tesoura'
+    }
+
+
+    if(bot == 1){
+        botFormatado = 'Pedra';
+    }
+    if(bot == 2){
+        botFormatado = 'Papel';
+    }
+    if(bot == 3){
+        botFormatado = 'Tesoura'
+    }
+
+
+    if (result == 'Empate'){
+        empate = empate + 1;
+    }
+    if (result == 'Perdeu'){
+        perdeu = perdeu + 1;
+    }
+    if (result == 'Ganhou'){
+        ganhou = ganhou + 1;
+    }
+
+    if(escolha <= 3 && escolha > 0){
+    const msg = `Você escolheu: ${escolhaFormatada}. O bot escolheu: ${botFormatado}. Resultado: ${result}`;
+    const conta = `Ganhou: ${ganhou} vez(es); Perdeu: ${perdeu} vez(es); Empatou: ${empate} vez(es)`;
+
+    setResultado(msg, true);
+    setContagem(conta);
+    }
+    else{
+        if (escolhai == ""){
+            const msg = `'0' é invalido!!`;
+            setResultado(msg, false);
+        }
+        else{
+            const msg = `'${escolhai}' é invalido!!`;
+            setResultado(msg, false);
+        }
+    }
 });
+
+btPapel.addEventListener('click', function(e){
+    escolha = 2;
+    const bot = Math.floor(Math.random() * 3 + 1);
+    var escolhaFormatada;
+    var botFormatado;
+    const result = getResultado(escolha, bot);
+
+    if(escolha == 1){
+        escolhaFormatada = 'Pedra';
+    }
+    if(escolha == 2){
+        escolhaFormatada = 'Papel';
+    }
+    if(escolha == 3){
+        escolhaFormatada = 'Tesoura'
+    }
+
+
+    if(bot == 1){
+        botFormatado = 'Pedra';
+    }
+    if(bot == 2){
+        botFormatado = 'Papel';
+    }
+    if(bot == 3){
+        botFormatado = 'Tesoura'
+    }
+
+
+    if (result == 'Empate'){
+        empate = empate + 1;
+    }
+    if (result == 'Perdeu'){
+        perdeu = perdeu + 1;
+    }
+    if (result == 'Ganhou'){
+        ganhou = ganhou + 1;
+    }
+    if(escolha <= 3 && escolha > 0){
+    const msg = `Você escolheu: ${escolhaFormatada}. O bot escolheu: ${botFormatado}. Resultado: ${result}`;
+    const conta = `Ganhou: ${ganhou} vez(es); Perdeu: ${perdeu} vez(es); Empatou: ${empate} vez(es)`;
+
+    setResultado(msg, true);
+    setContagem(conta);
+    }
+    else{
+        if (escolhai == ""){
+            const msg = `'0' é invalido!!`;
+            setResultado(msg, false);
+        }
+        else{
+            const msg = `'${escolhai}' é invalido!!`;
+            setResultado(msg, false);
+        }
+    }
+});
+
+btTesoura.addEventListener('click', function(e){
+    escolha = 3;
+    const bot = Math.floor(Math.random() * 3 + 1);
+    var escolhaFormatada;
+    var botFormatado;
+    const result = getResultado(escolha, bot);
+
+    if(escolha == 1){
+        escolhaFormatada = 'Pedra';
+    }
+    if(escolha == 2){
+        escolhaFormatada = 'Papel';
+    }
+    if(escolha == 3){
+        escolhaFormatada = 'Tesoura'
+    }
+
+
+    if(bot == 1){
+        botFormatado = 'Pedra';
+    }
+    if(bot == 2){
+        botFormatado = 'Papel';
+    }
+    if(bot == 3){
+        botFormatado = 'Tesoura'
+    }
+
+
+    if (result == 'Empate'){
+        empate = empate + 1;
+    }
+    if (result == 'Perdeu'){
+        perdeu = perdeu + 1;
+    }
+    if (result == 'Ganhou'){
+        ganhou = ganhou + 1;
+    }
+    if(escolha <= 3 && escolha > 0){
+    const msg = `Você escolheu: ${escolhaFormatada}. O bot escolheu: ${botFormatado}. Resultado: ${result}`;
+    const conta = `Ganhou: ${ganhou} vez(es); Perdeu: ${perdeu} vez(es); Empatou: ${empate} vez(es)`;
+
+    setResultado(msg, true);
+    setContagem(conta);
+    }
+    else{
+        if (escolhai == ""){
+            const msg = `'0' é invalido!!`;
+            setResultado(msg, false);
+        }
+        else{
+            const msg = `'${escolhai}' é invalido!!`;
+            setResultado(msg, false);
+        }
+    }
+});
+
 
 function getResultado(escolha, bot){ 
     if (escolha === bot){
