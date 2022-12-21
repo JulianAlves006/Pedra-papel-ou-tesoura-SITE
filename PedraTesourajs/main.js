@@ -113,16 +113,6 @@ btPedra.addEventListener('click', function(e){
     setResultado(msg, true);
     setContagem(conta);
     }
-    else{
-        if (escolhai == ""){
-            const msg = `'0' é invalido!!`;
-            setResultado(msg, false);
-        }
-        else{
-            const msg = `'${escolhai}' é invalido!!`;
-            setResultado(msg, false);
-        }
-    }
 });
 
 btPapel.addEventListener('click', function(e){
@@ -170,16 +160,6 @@ btPapel.addEventListener('click', function(e){
     setResultado(msg, true);
     setContagem(conta);
     }
-    else{
-        if (escolhai == ""){
-            const msg = `'0' é invalido!!`;
-            setResultado(msg, false);
-        }
-        else{
-            const msg = `'${escolhai}' é invalido!!`;
-            setResultado(msg, false);
-        }
-    }
 });
 
 btTesoura.addEventListener('click', function(e){
@@ -226,16 +206,6 @@ btTesoura.addEventListener('click', function(e){
 
     setResultado(msg, true);
     setContagem(conta);
-    }
-    else{
-        if (escolhai == ""){
-            const msg = `'0' é invalido!!`;
-            setResultado(msg, false);
-        }
-        else{
-            const msg = `'${escolhai}' é invalido!!`;
-            setResultado(msg, false);
-        }
     }
 });
 
